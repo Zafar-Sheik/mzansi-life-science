@@ -1,0 +1,240 @@
+/** Grade 12 – Diversity, change and continuity: evolution and human evolution (Paper 2). */
+import type { Lesson } from "../types";
+
+export const G12_EVOLUTION: Lesson[] = [
+  {
+    slug: "evidence-for-evolution",
+    topic: "g12-evolution",
+    order: 1,
+    title: "Evidence for Evolution & the Theories",
+    tagline: "Fossils, homologous limbs, DNA – and the ideas of Lamarck and Darwin.",
+    emoji: "🦒",
+    caps: "Gr 12 Term 3: Evolution – evidence (fossil record, modification by descent, biogeography, genetics), variation (continuous and discontinuous, sources of variation), Lamarckism, Darwinism, punctuated equilibrium, natural selection",
+    objectives: ["Describe the evidence for evolution", "Explain the sources of genetic variation", "Compare the theories of Lamarck and Darwin", "Explain natural selection and punctuated equilibrium"],
+    styles: ["visual", "kinaesthetic", "read-write"],
+    xp: 85,
+    terms: [
+      { term: "Biological evolution", def: "A change in the characteristics of a species over many generations." },
+      { term: "Theory", def: "A well-supported explanation of observations, tested by evidence." },
+      { term: "Fossil", def: "The preserved remains or traces of an organism that lived long ago." },
+      { term: "Homologous structures", def: "Structures with the same basic plan in different species but used for different functions – evidence of a common ancestor." },
+      { term: "Continuous variation", def: "Variation with a range of intermediate phenotypes, usually controlled by many genes (e.g. height)." },
+      { term: "Discontinuous variation", def: "Variation with distinct categories and no intermediates (e.g. blood groups, tongue rolling)." },
+      { term: "Natural selection", def: "Organisms with favourable characteristics survive and reproduce more, so these characteristics become more common." },
+      { term: "Punctuated equilibrium", def: "Long periods of little change interrupted by short periods of rapid change and speciation." },
+    ],
+    chunks: [
+      {
+        id: "evidence",
+        title: "The evidence",
+        minutes: 8,
+        blocks: [
+          { type: "table", headers: ["Evidence", "What it shows"], rows: [
+            ["**Fossil record**", "Older rock layers hold simpler organisms; transitional fossils link groups (e.g. *Archaeopteryx* between reptiles and birds). South Africa's Karoo has fossils of mammal-like reptiles."],
+            ["**Modification by descent** (comparative anatomy)", "The **pentadactyl limb** (five digits) in humans, whales, bats and frogs: same plan, different functions → **homologous structures** → a common ancestor."],
+            ["**Biogeography**", "Similar species on different continents that were once joined (Gondwana) – e.g. related plants in South Africa, South America and Australia."],
+            ["**Genetics**", "All organisms use the **same genetic code**; the more similar the DNA, the more closely related the species (humans and chimps share about 98–99% of their DNA)."],
+          ] },
+          { type: "callout", variant: "mistake", title: "\"Just a theory\"", md: "In science, a **theory** is not a guess. It is an explanation supported by a huge amount of evidence from many fields – like the theory of gravity." },
+        ],
+      },
+      {
+        id: "variation",
+        title: "Variation",
+        minutes: 6,
+        blocks: [
+          { type: "widget", widget: "sorter", props: { id: "variation-types", title: "Continuous or discontinuous?", colour: "var(--t-diversity)", buckets: ["Continuous", "Discontinuous"], items: [
+            { text: "Height", bucket: "Continuous" }, { text: "Mass", bucket: "Continuous" }, { text: "Skin colour", bucket: "Continuous" }, { text: "Length of a leaf", bucket: "Continuous" },
+            { text: "Blood group", bucket: "Discontinuous" }, { text: "Tongue rolling", bucket: "Discontinuous" }, { text: "Albinism", bucket: "Discontinuous" }, { text: "Free or attached earlobes", bucket: "Discontinuous" },
+          ] } },
+          { type: "keypoints", points: ["**Sources of variation:** crossing over and random arrangement in meiosis, random fertilisation, random mating, and **mutations**.", "Continuous variation gives a **histogram/bell curve**; discontinuous variation gives a **bar graph**."] },
+        ],
+      },
+      {
+        id: "theories",
+        title: "Lamarck vs Darwin (lab)",
+        minutes: 10,
+        blocks: [
+          { type: "table", headers: ["Lamarck (1809)", "Darwin & Wallace (1858)"], rows: [
+            ["**Use and disuse:** organs used a lot get bigger; unused organs shrink", "There is **variation** in every population"],
+            ["**Inheritance of acquired characteristics:** changes gained in a lifetime are passed on", "More offspring are born than can survive – a **struggle for survival**"],
+            ["Giraffes stretched their necks to reach leaves, and their young had longer necks", "Giraffes with longer necks (by variation) reached more food, survived and reproduced, passing on the allele"],
+            ["**Rejected** – characteristics gained during a lifetime are not in the DNA, so can't be inherited", "**Accepted** – supported by genetics (Mendel) as the modern theory of natural selection"],
+          ] },
+          { type: "widget", widget: "selection-lab" },
+          { type: "sequence", id: "natural-selection", title: "Natural selection, step by step", steps: [
+            "There is a great deal of variation amongst the organisms of a species",
+            "More offspring are produced than the environment can support",
+            "There is competition, and some characteristics are more favourable",
+            "Organisms with favourable characteristics survive and reproduce",
+            "They pass on the alleles for the favourable characteristics to their offspring",
+            "Over many generations the favourable characteristics become more common in the population",
+          ], explain: "Learn this order – it is a regular 6-mark question." },
+          { type: "keypoints", points: ["**Gradualism** (Darwin): species change slowly and steadily.", "**Punctuated equilibrium** (Eldredge and Gould, 1972): long periods of little change, then rapid change and speciation over short periods – explains the gaps in the fossil record."] },
+          { type: "quiz", id: "q-evolution", questions: [
+            { q: "The pentadactyl limb is an example of…", options: ["biogeography", "homologous structures", "punctuated equilibrium", "artificial selection"], answer: 1, explain: "Same structure, different function → common ancestry." },
+            { q: "Why was Lamarck's theory rejected?", options: ["He had no fossils", "Acquired characteristics are not inherited because they don't change the DNA of gametes", "He studied giraffes", "Darwin disliked him"], answer: 1, explain: "A bodybuilder's muscles are not passed on to their children." },
+            { q: "Which is a source of genetic variation?", options: ["Exercise", "Crossing over", "Learning", "Diet"], answer: 1, explain: "Crossing over in meiosis creates new combinations of alleles." },
+          ] },
+          { type: "terms" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "speciation-evolution-in-action",
+    topic: "g12-evolution",
+    order: 2,
+    title: "Speciation & Evolution in Action",
+    tagline: "How one species becomes two – and evolution happening right now.",
+    emoji: "🦋",
+    caps: "Gr 12 Term 3: Evolution – artificial selection, the biological species concept, speciation (allopatric), reproductive isolation mechanisms, evolution in present times (antibiotic resistance, insecticide resistance, HIV drug resistance)",
+    objectives: ["Define a biological species", "Explain allopatric speciation step by step", "Describe reproductive isolating mechanisms", "Compare natural and artificial selection and give examples of evolution today"],
+    styles: ["read-write", "kinaesthetic"],
+    xp: 75,
+    terms: [
+      { term: "Species", def: "A group of organisms with similar characteristics that can interbreed to produce fertile offspring." },
+      { term: "Speciation", def: "The formation of a new species." },
+      { term: "Allopatric speciation", def: "Speciation that happens when a population is separated by a geographical barrier." },
+      { term: "Reproductive isolation", def: "Mechanisms that prevent two species from interbreeding." },
+      { term: "Artificial selection", def: "Humans choose organisms with desired characteristics to breed (selective breeding)." },
+      { term: "Antibiotic resistance", def: "The ability of bacteria to survive an antibiotic, which spreads by natural selection." },
+    ],
+    chunks: [
+      {
+        id: "speciation",
+        title: "Allopatric speciation",
+        minutes: 8,
+        blocks: [
+          { type: "sequence", id: "allopatric", title: "How a new species forms", steps: [
+            "A population of one species is split by a geographical barrier (a river, sea or mountain)",
+            "There is no gene flow between the two populations",
+            "Each population is exposed to different environmental conditions",
+            "Natural selection acts differently on each population",
+            "Over many generations the populations become genetically and physically different",
+            "Even if they meet again, they can no longer interbreed – they are different species",
+          ], explain: "Example: the Galápagos finches studied by Darwin, and many fynbos plants separated by mountain ranges." },
+          { type: "table", headers: ["Reproductive isolating mechanism", "Example"], rows: [
+            ["Breeding at different times of year", "Two frog species call in different seasons"],
+            ["Species-specific courtship behaviour", "Birds with different songs or displays"],
+            ["Adaptation to different pollinators", "Different flowers, different insects"],
+            ["Prevention of fertilisation", "Sperm can't survive in the female tract"],
+            ["Infertile offspring", "A horse × donkey gives a **mule** – sterile"],
+          ] },
+        ],
+      },
+      {
+        id: "selection",
+        title: "Artificial selection & evolution now",
+        minutes: 8,
+        blocks: [
+          { type: "table", headers: ["", "Natural selection", "Artificial selection"], rows: [
+            ["Who selects", "The environment", "Humans"],
+            ["Selected for", "Survival in that environment", "What humans want (yield, taste, looks)"],
+            ["Speed", "Slow", "Faster"],
+            ["Examples", "Dark beetles on dark soil", "Nguni cattle, maize, dog breeds, Bonsmara cattle"],
+          ] },
+          { type: "keypoints", points: [
+            "**Antibiotic resistance:** a bacterium with a mutation survives the antibiotic; it reproduces and the resistant strain spreads (e.g. MDR and XDR TB).",
+            "**Insecticide resistance:** mosquitoes resistant to DDT survive spraying and pass on resistance – a problem for malaria control.",
+            "**HIV drug resistance:** the virus mutates fast; that's why ARVs must be taken every day without missing doses.",
+          ] },
+          { type: "widget", widget: "germ-lab", props: { mode: "antibiotics" } },
+          { type: "exam", question: { id: "ex-tb-1", q: "Use natural selection to explain how a population of TB bacteria becomes resistant to an antibiotic.", marks: 5, level: "applying", memo: [
+            "There is variation in the bacterial population", "Some bacteria have a mutation that makes them resistant to the antibiotic", "When the antibiotic is used, non-resistant bacteria die", "The resistant bacteria survive and reproduce", "and pass on the allele for resistance, so the proportion of resistant bacteria increases",
+          ] } },
+          { type: "quiz", id: "q-speciation", questions: [
+            { q: "A mule is sterile. This shows that horses and donkeys…", options: ["are the same species", "are different species", "are clones", "evolved from mules"], answer: 1, explain: "Fertile offspring is the test of a biological species." },
+            { q: "Which is an example of artificial selection?", options: ["Resistant TB bacteria", "Breeding maize for bigger cobs", "Finches on islands", "Beetles on dark soil"], answer: 1, explain: "Humans chose the characteristic." },
+            { q: "What starts allopatric speciation?", options: ["A mutation", "A geographical barrier", "Interbreeding", "Artificial selection"], answer: 1, explain: "The barrier stops gene flow between the populations." },
+          ] },
+          { type: "terms" },
+        ],
+      },
+    ],
+  },
+  {
+    slug: "human-evolution",
+    topic: "g12-human-evolution",
+    order: 1,
+    title: "Human Evolution & the Cradle of Humankind",
+    tagline: "Africa is where we all come from – and South Africa holds the evidence.",
+    emoji: "🦴",
+    caps: "Gr 12 Term 3: Human evolution – humans as primates, similarities and differences between African apes and humans, bipedalism, the fossil evidence (Ardipithecus, Australopithecus, Homo), the Cradle of Humankind, Out of Africa hypothesis (fossil, genetic and cultural evidence)",
+    objectives: ["Describe the characteristics humans share with other primates", "Compare the skulls and skeletons of African apes and humans", "Describe the fossil evidence for human evolution, including South African finds", "Explain the Out of Africa hypothesis and its evidence"],
+    styles: ["visual", "read-write"],
+    xp: 80,
+    terms: [
+      { term: "Primate", def: "A mammal with opposable thumbs, forward-facing eyes (binocular vision), nails instead of claws and a large brain." },
+      { term: "Hominid", def: "Humans and their extinct bipedal ancestors." },
+      { term: "Bipedalism", def: "Walking upright on two legs." },
+      { term: "Foramen magnum", def: "The opening in the skull through which the spinal cord passes – central and forward in bipeds." },
+      { term: "Cradle of Humankind", def: "A World Heritage Site near Johannesburg with caves (Sterkfontein, Swartkrans, Rising Star) rich in hominid fossils." },
+      { term: "Out of Africa hypothesis", def: "Modern humans (Homo sapiens) evolved in Africa and then migrated to the rest of the world." },
+      { term: "Prognathism", def: "A forward-projecting jaw, as in apes." },
+    ],
+    chunks: [
+      {
+        id: "primates",
+        title: "Humans are primates",
+        minutes: 7,
+        blocks: [
+          { type: "keypoints", points: ["Shared primate features: **opposable thumbs**, **binocular (stereoscopic) vision**, **flat nails**, **large brain** for body size, **long parental care**, **few offspring**.", "Humans and African apes share a **common ancestor** – humans did **not** evolve from chimpanzees."] },
+          { type: "table", headers: ["Feature", "African apes", "Humans"], rows: [
+            ["Foramen magnum", "Towards the back of the skull", "**Central, further forward** – head balanced on an upright spine"],
+            ["Spine", "C-shaped", "**S-shaped**"],
+            ["Pelvis", "Long and narrow", "**Short and wide**"],
+            ["Brain size", "Small (~400 cm³)", "**Large (~1 350 cm³)**"],
+            ["Jaw", "Prognathous (sticks out), large canines", "**Non-prognathous**, small teeth"],
+            ["Brow ridges", "Large", "Small or absent"],
+            ["Arms vs legs", "Arms longer than legs", "**Legs longer** than arms"],
+          ] },
+          { type: "callout", variant: "exam", title: "Bipedalism", md: "Know the skeletal evidence for walking upright: **forward foramen magnum, S-shaped spine, short wide pelvis, longer legs, arched foot** – and its advantages: seeing over tall grass, freeing the hands to carry food and tools, less body surface exposed to the sun." },
+        ],
+      },
+      {
+        id: "fossils",
+        title: "The fossil evidence",
+        minutes: 8,
+        blocks: [
+          { type: "table", headers: ["Genus / fossil", "Age (million years)", "Where", "Notes"], rows: [
+            ["*Ardipithecus* ('Ardi')", "~4,4", "Ethiopia", "Early hominid – partly bipedal, still climbed trees"],
+            ["*Australopithecus africanus* – **Taung Child**", "~2,5", "Taung, North West", "Found by **Raymond Dart** in 1924 – the first australopithecine"],
+            ["*Australopithecus africanus* – **Mrs Ples**", "~2,1", "Sterkfontein", "Found by **Robert Broom** in 1947"],
+            ["*Australopithecus* – **Little Foot**", "~3,7", "Sterkfontein", "Almost complete skeleton (Ron Clarke)"],
+            ["*Australopithecus sediba*", "~2", "Malapa, Cradle of Humankind", "Found by Lee Berger's 9-year-old son in 2008"],
+            ["*Homo naledi*", "~0,3", "Rising Star cave", "Small brain but recent – discovered 2013"],
+            ["*Homo habilis* → *Homo erectus* → *Homo sapiens*", "2,4 → 0,3", "Africa first", "Bigger brains, stone tools, use of fire"],
+          ] },
+          { type: "match", id: "fossil-match", title: "Match the fossil to its discoverer", pairs: [
+            { left: "Taung Child", right: "Raymond Dart (1924)" },
+            { left: "Mrs Ples", right: "Robert Broom (1947)" },
+            { left: "Little Foot", right: "Ron Clarke (1997)" },
+            { left: "*Australopithecus sediba*", right: "Lee and Matthew Berger (2008)" },
+          ] },
+        ],
+      },
+      {
+        id: "africa",
+        title: "Out of Africa",
+        minutes: 6,
+        blocks: [
+          { type: "keypoints", points: [
+            "**Fossil evidence:** the oldest *Homo sapiens* fossils (about 300 000 years old) are found in Africa; fossils outside Africa are younger.",
+            "**Genetic evidence:** **mitochondrial DNA** (inherited from the mother only) shows that all humans share a common female ancestor in Africa ('mitochondrial Eve'). African populations have the greatest genetic diversity.",
+            "**Cultural evidence:** the oldest stone tools and art – e.g. engraved ochre and shell beads at **Blombos Cave** in the Western Cape (about 75 000 years old).",
+          ] },
+          { type: "quiz", id: "q-human-evo", questions: [
+            { q: "In humans the foramen magnum is…", options: ["at the back of the skull", "central and further forward", "missing", "on top of the skull"], answer: 1, explain: "It lets the skull balance on top of an upright spine." },
+            { q: "Which fossil did Raymond Dart describe in 1924?", options: ["Mrs Ples", "Little Foot", "Taung Child", "Homo naledi"], answer: 2, explain: "The Taung Child was the first australopithecine discovered." },
+            { q: "Mitochondrial DNA supports the Out of Africa hypothesis because…", options: ["it is inherited from the father", "it shows all humans share a common female ancestor in Africa", "it never changes", "it is found only in Africans"], answer: 1, explain: "mtDNA passes through the mother's line with few changes, tracing ancestry back to Africa." },
+          ] },
+          { type: "exam", question: { id: "ex-bipedal-1", q: "Describe THREE characteristics of the human skeleton that are associated with bipedalism.", marks: 3, level: "knowing", memo: [
+            "Foramen magnum is in a forward / central position", "S-shaped spine", "Short, wide pelvis / legs longer than arms",
+          ] } },
+          { type: "terms" },
+        ],
+      },
+    ],
+  },
+];
